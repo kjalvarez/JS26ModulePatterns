@@ -1,3 +1,4 @@
+var count = 0;
 var Repeater = {
 	repeatString: function (string, count) {
 		var newArray=[]; //Defined outside of for loop!  
@@ -14,7 +15,20 @@ var Repeater = {
 		}
 		return newArray.join('');
 
-	}
-};
+	},
 
-console.log(Repeater.repeatFunction(function(x,y){console.log(x*y)}, 20));
+	repeatMore: function (string) {
+		var newArray=[];
+		var count=count++;
+
+		for (i=0; i<count; i++) {
+			newArray.push(string);
+		}
+		return newArray;
+	}
+}
+
+console.log(Repeater.repeatMore('dog'));
+console.log(Repeater.repeatMore('house'));
+
+
